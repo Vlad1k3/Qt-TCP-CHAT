@@ -50,7 +50,7 @@ private slots:
     void on_pushButton_clicked();
     void on_pushButton_2_clicked();
     void onNewMessageReceived(QString message);
-    void processAsioEvents(); // Новый слот для обработки событий Asio
+    void processAsioEvents();
 
 signals:
     void newMessageReceived(QString message);
@@ -61,10 +61,10 @@ private:
     boost::asio::ip::tcp::socket socket;
     Registration *sWindow;
     std::unique_ptr<boost::asio::streambuf> readBuffer;
-    QTimer *asioTimer; // Новый QTimer
+    QTimer *asioTimer;
 
     void startReading();
     void addMessageToChat(QString message);
 };
 
-#endif // MAINWINDOW_H
+#endif

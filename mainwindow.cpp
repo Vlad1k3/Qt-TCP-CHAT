@@ -12,6 +12,7 @@ MainWindow::MainWindow(QWidget *parent)
     , socket(service)
     , readBuffer(std::make_unique<boost::asio::streambuf>())
     , asioTimer(new QTimer(this))
+{
     ui->setupUi(this);
 
     // Создание нового CustomTextEdit и замена textEdit для реагирование на нажатие Enter
@@ -96,7 +97,6 @@ void MainWindow::on_pushButton_2_clicked()
 {
     sWindow->show();
 }
-
 
 void MainWindow::addMessageToChat(QString message)
 {

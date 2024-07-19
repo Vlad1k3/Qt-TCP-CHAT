@@ -61,7 +61,8 @@ OBJECTS       = main.o \
 		registration.o \
 		moc_mainwindow.o \
 		moc_registration.o
-DIST          = /usr/lib/qt/mkspecs/features/spec_pre.prf \
+DIST          = ../../README.md \
+		/usr/lib/qt/mkspecs/features/spec_pre.prf \
 		/usr/lib/qt/mkspecs/common/unix.conf \
 		/usr/lib/qt/mkspecs/common/linux.conf \
 		/usr/lib/qt/mkspecs/common/sanitize.conf \
@@ -828,7 +829,8 @@ main.o: ../../main.cpp ../../mainwindow.h \
 
 mainwindow.o: ../../mainwindow.cpp ../../mainwindow.h \
 		../../registration.h \
-		ui_mainwindow.h
+		ui_mainwindow.h \
+		../../messagedelegate.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../../mainwindow.cpp
 
 registration.o: ../../registration.cpp ../../registration.h \
